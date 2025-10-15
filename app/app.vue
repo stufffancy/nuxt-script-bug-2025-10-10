@@ -1,15 +1,12 @@
 <script setup lang="ts">
 const script = useScript({
-  src: 'https://example.com/analytics.js',
+  src: "https://checkout-sdk.onerway.com/v3/",
+  crossorigin: false,
 }, {
-  // https://scripts.nuxt.com/docs/api/use-script-trigger-idle-timeout
-  trigger: useScriptTriggerIdleTimeout({ timeout: 5000 })
-})
+  // trigger: useScriptTriggerIdleTimeout({ timeout: 1000 })
+});
 </script>
 
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <div>Script status: {{ script.status.value }}</div>
 </template>
